@@ -12,6 +12,8 @@ class SignUp extends StatefulWidget {
 class _SignUpState extends State<SignUp> {
   @override
   Widget build(BuildContext context) {
+    final screenSize = MediaQuery.of(context).size;
+
     return Scaffold(
         resizeToAvoidBottomInset: true,
         body: SingleChildScrollView(
@@ -42,8 +44,8 @@ class _SignUpState extends State<SignUp> {
                         SvgPicture.asset(
                           'assets/images/Signup_1.svg',
                           semanticsLabel: 'Sign Up Vector',
-                          height: 200,
-                          width: 300,
+                          height: screenSize.height*0.25,
+                          width: screenSize.width*0.3,
                         ),
                         Container(
                             alignment: Alignment.topCenter,
@@ -69,12 +71,12 @@ class _SignUpState extends State<SignUp> {
             ),
           ),
           Padding(
-            padding: EdgeInsets.symmetric(vertical: 10.0, horizontal: 5.0),
+            padding: EdgeInsets.symmetric(vertical: 10.0, horizontal: screenSize.width*0.01),
             child: Column(
               children: [
-                const Padding(
-                  padding: EdgeInsets.symmetric(vertical: 10, horizontal: 15),
-                  child: TextField(
+                Padding(
+                  padding: EdgeInsets.symmetric(vertical: 10, horizontal: screenSize.width*0.03),
+                  child: const TextField(
                       decoration: InputDecoration(
                           contentPadding: EdgeInsets.symmetric(
                               vertical: 15, horizontal: 20),
@@ -84,9 +86,9 @@ class _SignUpState extends State<SignUp> {
                           hintText: 'Email',
                           hintStyle: TextStyle(color: Colors.grey))),
                 ),
-                const Padding(
-                  padding: EdgeInsets.symmetric(vertical: 10, horizontal: 15),
-                  child: TextField(
+                Padding(
+                  padding: EdgeInsets.symmetric(vertical: 10, horizontal: screenSize.width*0.03),
+                  child: const TextField(
                       decoration: InputDecoration(
                           contentPadding: EdgeInsets.symmetric(
                               vertical: 15, horizontal: 20),
@@ -96,9 +98,9 @@ class _SignUpState extends State<SignUp> {
                           hintText: 'Password',
                           hintStyle: TextStyle(color: Colors.grey))),
                 ),
-                const Padding(
-                  padding: EdgeInsets.symmetric(vertical: 10, horizontal: 15),
-                  child: TextField(
+                Padding(
+                  padding: EdgeInsets.symmetric(vertical: 10, horizontal: screenSize.width*0.03),
+                  child: const TextField(
                       decoration: InputDecoration(
                           contentPadding: EdgeInsets.symmetric(
                               vertical: 15, horizontal: 20),
@@ -108,9 +110,9 @@ class _SignUpState extends State<SignUp> {
                           hintText: 'Full Name',
                           hintStyle: TextStyle(color: Colors.grey))),
                 ),
-                const Padding(
-                  padding: EdgeInsets.symmetric(vertical: 10, horizontal: 15),
-                  child: TextField(
+                Padding(
+                  padding: EdgeInsets.symmetric(vertical: 10, horizontal: screenSize.width*0.03),
+                  child: const TextField(
                       decoration: InputDecoration(
                           contentPadding: EdgeInsets.symmetric(
                               vertical: 15, horizontal: 20),
@@ -122,12 +124,11 @@ class _SignUpState extends State<SignUp> {
                 ),
                 Padding(
                   padding:
-                      const EdgeInsets.symmetric(vertical: 10, horizontal: 15),
+                      EdgeInsets.symmetric(vertical: 10, horizontal: screenSize.width*0.03),
                   child: OutlinedButton(
-                      style: const ButtonStyle(
-                        padding: MaterialStatePropertyAll(EdgeInsets.symmetric(
-                            vertical: 13, horizontal: 100)),
-                        overlayColor: MaterialStatePropertyAll(
+                      style: ButtonStyle(
+                        padding: MaterialStatePropertyAll(EdgeInsets.symmetric(vertical: 10, horizontal: screenSize.width*0.3)),
+                        overlayColor: const MaterialStatePropertyAll(
                             Color.fromRGBO(255, 255, 255, 0.4)),
                       ),
                       onPressed: () {},

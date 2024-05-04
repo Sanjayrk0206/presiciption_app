@@ -13,6 +13,8 @@ class MyHomePage extends StatefulWidget {
 class _MyHomePageState extends State<MyHomePage> {
   @override
   Widget build(BuildContext context) {
+    final screenSize = MediaQuery.of(context).size;
+
     return Scaffold(
       body: Center(
         child: Column(
@@ -56,8 +58,8 @@ class _MyHomePageState extends State<MyHomePage> {
               alignment: Alignment.bottomCenter,
               child: FilledButton(
                   style: ButtonStyle(
-                      padding: const MaterialStatePropertyAll(
-                          EdgeInsets.symmetric(vertical: 13, horizontal: 130)),
+                      padding:  MaterialStatePropertyAll(
+                          EdgeInsets.symmetric(vertical: 10, horizontal: screenSize.width*0.3)),
                       backgroundColor: MaterialStateProperty.all(
                           Theme.of(context).colorScheme.primary),
                       overlayColor: MaterialStateProperty.all(
@@ -68,7 +70,7 @@ class _MyHomePageState extends State<MyHomePage> {
                   child: Text('Start Now',
                       style: GoogleFonts.montserrat(
                           textStyle: const TextStyle(
-                              fontSize: 20.0, fontWeight: FontWeight.w700)))),
+                              fontSize: 18.0, fontWeight: FontWeight.w700)))),
             ),
           ],
         ),
